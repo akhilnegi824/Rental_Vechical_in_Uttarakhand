@@ -1,0 +1,652 @@
+/* ==========================================================================
+   1. CUSTOM VARIABLES & RESET
+   ========================================================================== */
+
+:root {
+  --ink: #11251f;
+  --lime: #e5ff5b;
+  --cream: #f6f3ed;
+  --muted: #66736d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. BASE ELEMENTS
+   ========================================================================== */
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 6vw, 5.5rem);
+  line-height: 1.03;
+}
+
+h1 em {
+  color: #b7d62d;
+}
+
+h2 {
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
+}
+
+p {
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   3. HEADER & NAVIGATION
+   ========================================================================== */
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #e6e6e0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  min-height: 82px;
+}
+
+.brand {
+  display: grid;
+  line-height: 0.9;
+  text-decoration: none;
+  color: var(--ink);
+  letter-spacing: 2px;
+}
+
+.brand b {
+  font-size: 0.68rem;
+}
+
+.brand strong {
+  font-size: 1.35rem;
+}
+
+.brand small {
+  font-size: 0.48rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: var(--ink) !important;
+  margin: 0 9px;
+  font-weight: 600;
+}
+
+.nav-link.active {
+  color: #819e00 !important;
+}
+
+/* ==========================================================================
+   4. COMPONENTS & UI ELEMENTS
+   ========================================================================== */
+
+.btn {
+  border-radius: 0;
+  padding: 0.75rem 1.1rem;
+  font-weight: 700;
+}
+
+.btn-warning {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--ink);
+}
+
+.tag {
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.tag.dark {
+  color: #789300;
+}
+
+/* ==========================================================================
+   5. HERO SECTION & STATS
+   ========================================================================== */
+
+.hero {
+  background: linear-gradient(90deg, #10251fdd, #10251f55), url('../images/hero.jpg') center/cover, #264137;
+  color:white;
+  padding: 115px 0 75px;
+  min-height: 600px;
+}
+
+.hero p {
+  color: #d6ded8;
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+
+.stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 75px;
+}
+
+.stats div {
+  display: grid;
+}
+
+.stats b {
+  font-size: 1.8rem;
+}
+
+.stats span {
+  color: #cbd4ce;
+  font-size: 0.82rem;
+}
+
+/* ==========================================================================
+   6. LAYOUT SECTIONS & FEATURES GRID
+   ========================================================================== */
+
+.section {
+  padding: 90px 12px;
+}
+
+.heading {
+  margin-bottom: 35px;
+}
+
+.dark-section {
+  background: var(--ink);
+  color: #fff;
+}
+
+.dark-section p {
+  color: #ccd7d0;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.features div {
+  background: #203930;
+  padding: 25px;
+}
+
+.features i {
+  font-size: 1.7rem;
+  color: var(--lime);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.features b {
+  display: block;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   7. CATEGORY SELECTION BLOCKS
+   ========================================================================== */
+
+.choice {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 28px;
+  height: 285px;
+  background: #5a755d;
+  position: relative;
+}
+
+.choice:hover {
+  color: white;
+  transform: translateY(-4px);
+}
+
+.choice h3 {
+  font-size: 2.5rem;
+  margin-top: 95px;
+}
+
+.choice p {
+  color: #e0e7df;
+}
+
+.choice span {
+  color: var(--lime);
+}
+
+.bike {
+  background: #871459;
+}
+
+.scooty {
+  background: #806558;
+}
+
+/* ==========================================================================
+   8. VEHICLE LISTINGS & CARDS
+   ========================================================================== */
+
+.listing-page, 
+.form-page {
+  padding: 80px 0;
+}
+
+.listing-page .lead {
+  max-width: 670px;
+}
+
+.list-title {
+  margin: 70px 0 22px;
+}
+
+.list-title small {
+  font-family: 'DM Sans';
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.vehicle-card {
+  background: #fff;
+  height: 100%;
+}
+
+.vehicle-image {
+  height: 205px;
+  background: #e1e4dd;
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: #708078;
+}
+
+.vehicle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.vehicle-image span {
+  font-size: 0.8rem;
+}
+
+.vehicle-info {
+  padding: 20px;
+}
+
+.vehicle-info h3 {
+  font-size: 1.45rem;
+}
+
+.vehicle-info p {
+  font-size: 0.86rem;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #6d7972;
+}
+
+.price b {
+  font-size: 1.4rem;
+  color: var(--ink);
+}
+
+.price .btn {
+  margin-left: auto;
+  padding: 0.5rem 0.75rem;
+}
+
+/* ==========================================================================
+   9. BOOKING FORMS & FORM FIELDS
+   ========================================================================== */
+
+.booking-form {
+  background: #fff;
+  padding: 35px;
+}
+
+.booking-form h3 {
+  margin: 0 0 20px;
+}
+
+.booking-form h3:not(:first-child) {
+  margin-top: 35px;
+}
+
+label {
+  font-size: 0.83rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+input, 
+select, 
+textarea {
+  width: 100%;
+  border: 1px solid #d7dcd8;
+  padding: 0.75rem;
+  outline: none;
+}
+
+.check {
+  font-weight: 400;
+}
+
+.check input {
+  width: auto;
+  margin-right: 8px;
+}
+
+.notice {
+  border-left: 3px solid #9bbb00;
+  padding: 15px;
+  background: #86b6ff;
+}
+
+/* ==========================================================================
+   10. STATUS & SUCCESS PAGES
+   ========================================================================== */
+
+.success-page {
+  padding: 130px 0;
+  min-height: 55vh;
+}
+
+.success-page i {
+  font-size: 4rem;
+  color: #8aa800;
+}
+
+.success-page p {
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   11. FOOTER & COPYRIGHT
+   ========================================================================== */
+
+footer {
+  background: #0b1a16;
+  color: #e8edea;
+  padding: 62px 0 20px;
+}
+
+footer a {
+  display: block;
+  color: #c7d1ca;
+  text-decoration: none;
+  margin: 8px 0;
+}
+
+footer p {
+  color: #c7d1ca;
+}
+
+.copyright {
+  border-top: 1px solid #294037;
+  padding-top: 20px;
+  margin-top: 35px;
+  color: #a9b6af;
+  font-size: 0.85rem;
+}
+
+.copyright span {
+  float: right;
+}
+
+/* ==========================================================================
+   12. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+
+@media (max-width: 700px) {
+  .stats {
+    gap: 18px;
+  }
+
+  .stats b {
+    font-size: 1.3rem;
+  }
+
+  .section {
+    padding: 60px 12px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .copyright span {
+    float: none;
+    display: block;
+    margin-top: 6px;
+  }
+}
+
+/* ==========================================================
+   ANIMATIONS
+   ========================================================== */
+
+@keyframes fadeUp {
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes zoomHero {
+  from{
+    transform:scale(1.08);
+  }
+  to{
+    transform:scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.05);
+  }
+  100%{
+    transform:scale(1);
+  }
+}
+
+@keyframes float {
+  0%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}
+
+@keyframes shine {
+  0%{
+    left:-100%;
+  }
+  100%{
+    left:120%;
+  }
+}
+
+/* HERO */
+
+.animate-hero{
+  animation:zoomHero 2s ease forwards;
+}
+
+.fade-up{
+  opacity:0;
+  animation:fadeUp 1s ease forwards;
+}
+
+.delay-1{
+  animation-delay:.3s;
+}
+
+.delay-2{
+  animation-delay:.6s;
+}
+
+.delay-3{
+  animation-delay:.9s;
+}
+
+/* BUTTONS */
+
+.pulse-btn{
+  animation:pulse 2s infinite;
+}
+
+.glow-btn{
+  position:relative;
+  overflow:hidden;
+}
+
+.glow-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:rgba(255,255,255,.4);
+  transform:skewX(-20deg);
+  animation:shine 3s infinite;
+}
+
+/* CARDS */
+
+.animate-card{
+  animation:fadeUp 1s ease forwards;
+}
+
+.choice,
+.vehicle-card,
+.notice,
+.features div{
+  transition:.4s ease;
+}
+
+.choice:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.vehicle-card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+.vehicle-card:hover .vehicle-image img{
+  transform:scale(1.08);
+}
+
+.vehicle-image img{
+  transition:.5s ease;
+}
+
+.notice:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.features div:hover{
+  transform:translateY(-8px);
+  background:#2b4a3e;
+}
+
+/* STATS */
+
+.stats div{
+  animation:float 4s ease-in-out infinite;
+}
+
+.stats div:nth-child(2){
+  animation-delay:.4s;
+}
+
+.stats div:nth-child(3){
+  animation-delay:.8s;
+}
+
+.stats div:nth-child(4){
+  animation-delay:1.2s;
+}
+
+/* LINKS */
+
+.nav-link{
+  transition:.3s;
+}
+
+.nav-link:hover{
+  color:#9bbb00 !important;
+}
+
+/* FOOTER LINKS */
+
+footer a{
+  transition:.3s;
+}
+
+footer a:hover{
+  color:var(--lime);
+  transform:translateX(5px);
+}
+
+/* IMAGES */
+
+.vehicle-image{
+  overflow:hidden;
+}
+
+/* FEATURE GRID */
+
+.animate-grid div{
+  animation:fadeUp 1s ease forwards;
+}
+
+.animate-grid div:nth-child(1){
+  animation-delay:.1s;
+}
+
+.animate-grid div:nth-child(2){
+  animation-delay:.3s;
+}
+
+.animate-grid div:nth-child(3){
+  animation-delay:.5s;
+}
+
+.animate-grid div:nth-child(4){
+  animation-delay:.7s;
+}
